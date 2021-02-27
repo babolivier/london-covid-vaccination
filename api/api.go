@@ -5,17 +5,11 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/babolivier/london-covid-vaccination/common"
 	"github.com/babolivier/london-covid-vaccination/config"
 	"github.com/babolivier/london-covid-vaccination/storage"
 
 	"github.com/sirupsen/logrus"
 )
-
-// responseBody represents the body of responses to API requests.
-type responseBody struct {
-	Stats []*common.DailyStats `json:"stats"`
-}
 
 // makeApiHandler returns a HTTP handler that handlers incoming GET requests on the API.
 func makeApiHandler(db *storage.Database) http.HandlerFunc {
@@ -28,12 +22,8 @@ func makeApiHandler(db *storage.Database) http.HandlerFunc {
 			return
 		}
 
-		// Structure and marshal the body.
-		body := &responseBody{
-			Stats: stats,
-		}
-
-		rawBody, err := json.Marshal(body)
+		// Turn the stats into JSON bytes.
+		rawBody, err := json.Marshal(stats)
 		if err != nil {
 			logrus.WithError(err).Error("Failed to marshal response body")
 			http.Error(w, "", http.StatusInternalServerError)
