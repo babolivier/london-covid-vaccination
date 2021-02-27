@@ -28,6 +28,9 @@ An HTTP+JSON API is hosted to allow for the automated retrieval of this data.
 A very simple visualisation graph (that uses this API) is also hosted at the
 root of the HTTP server.
 
+A live version of this API (and this visualisation graph) are available at
+https://covid-vax-lon.abolivier.bzh/
+
 ### `GET /stats`
 
 Response body:
