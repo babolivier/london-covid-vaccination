@@ -1,0 +1,21 @@
+# Configuration for the HTTP server that serves the API and its visualisation graph.
+api:
+  # Address to listen on.
+  address: 127.0.0.1
+  # Port to listen on.
+  port: 8080
+
+# Configuration for the PostgreSQL database.
+database:
+  # PostgreSQL host.
+  host: localhost
+  # PostgreSQL user.
+  user: vaccines_stats
+  # PostgreSQL user password.
+  password: hackme
+  # PostgreSQL database.
+  database: vaccine_stats
+  # Whether to use SSL to connect to the database. Allowed values are documented at
+  # https://pkg.go.dev/github.com/lib/pq#hdr-Connection_String_Parameters (look for
+  # "Valid values for sslmode").
+  ssl_mode: disable

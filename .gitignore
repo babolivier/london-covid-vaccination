@@ -1,2 +1,5 @@
 # Development files.
 .idea
+
+# Configuration files
+config.yaml
