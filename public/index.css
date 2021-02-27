@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    width: 800px;
+    height: 700px;
+    margin: auto;
+}
+a, a:visited, a:hover {
+    color: #292929;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 35px;
+    padding: 2px;
+    font: 15px sans-serif;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: white;
+    pointer-events: none;
+}
+footer {
+    font-size: 80%;
+    padding-top: 20px;
+}
