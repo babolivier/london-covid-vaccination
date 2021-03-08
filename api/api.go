@@ -32,6 +32,7 @@ func makeApiHandler(db *storage.Database) http.HandlerFunc {
 
 		// Send the response.
 		w.WriteHeader(200)
+		w.Header().Add("Content-Type", "application/json")
 		if _, err = w.Write(rawBody); err != nil {
 			logrus.WithError(err).Error("Failed to write response body")
 		}
